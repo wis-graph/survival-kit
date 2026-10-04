@@ -6,7 +6,7 @@
     {
       "name": "survival-kit",
       "source": "./",
-      "description": "알림 소리, 오늘 할 일 정리, 아침 뉴스 브리핑"
+      "description": "알림 소리, 오늘 할 일 정리, 아침 뉴스 브리핑, 퇴근까지 남은 시간"
     }
   ]
 }

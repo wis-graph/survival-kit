@@ -2,11 +2,12 @@
 
 ## 개요
 
-Claude Code 플러그인이며 기능이 세 가지다.
+Claude Code 플러그인이며 기능이 네 가지다.
 
 - 알림 소리: 작업 완료, 승인 요청, API 오류로 멈춤 때 서로 다른 짧은 소리를 낸다.
 - `/survival-kit:today`: 생각나는 대로 적은 할 일을 우선순위와 예상 시간이 붙은 표로 정리한다.
 - `/survival-kit:morning-news`: AI·경제·비영리 세 분야의 최근 이틀 뉴스를 세 줄로 브리핑한다.
+- `/survival-kit:off-work`: 퇴근 시각까지 남은 시간을 'N시간 M분'으로 알려 준다.
 
 ## 설치
 
@@ -57,3 +58,12 @@ export SURVIVAL_KIT_SOUND=off
 ```
 
 "아침 뉴스 브리핑해줘"처럼 말해도 된다. 스킬이 `news-collector` 서브에이전트(`agents/news-collector.md`)를 분야마다 하나씩, 세 개를 동시에 띄운다. 각 서브에이전트는 WebSearch로 어제·오늘 기사를 찾아 3건 이내로 돌려주고, 스킬이 분야마다 한 줄씩 합친다. 분야를 바꾸려면 `skills/morning-news/SKILL.md`의 분야 목록을 고친다.
+
+## off-work 사용법
+
+```
+/survival-kit:off-work
+/survival-kit:off-work 17:30
+```
+
+인자가 없으면 퇴근 시각을 18:00으로 본다. `date` 명령으로 현재 시각을 확인해 `현재 13:45, 퇴근(17:30)까지 3시간 45분 남았습니다.`처럼 한 줄로 답하고, 퇴근 시각이 지났으면 지났다고 답한다. "퇴근까지 얼마나 남았어"처럼 말해도 된다.

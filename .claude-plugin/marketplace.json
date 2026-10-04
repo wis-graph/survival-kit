@@ -1,0 +1,12 @@
+{
+  "name": "survival-kit-market",
+  "description": "직장인 생존 키트 마켓플레이스",
+  "owner": { "name": "문찬원" },
+  "plugins": [
+    {
+      "name": "survival-kit",
+      "source": "./",
+      "description": "알림 소리, 오늘 할 일 정리, 아침 뉴스 브리핑"
+    }
+  ]
+}

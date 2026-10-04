@@ -1,0 +1,14 @@
+{
+  "description": "작업 완료·승인 요청·API 오류 때 서로 다른 짧은 소리",
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh\" done", "async": true, "timeout": 5 } ] }
+    ],
+    "Notification": [
+      { "matcher": "permission_prompt", "hooks": [ { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh\" ask", "async": true, "timeout": 5 } ] }
+    ],
+    "StopFailure": [
+      { "hooks": [ { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play-sound.sh\" error", "async": true, "timeout": 5 } ] }
+    ]
+  }
+}
